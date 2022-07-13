@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let ticket of myTickets">
+    <app-ticket [ticketTitle]="ticket.title" [routerLink]="['./', ticket.id]"></app-ticket>
+  </li>
+</ul>
+
+<!-- Moduri prin care 2 componente pot sa comunice -->
+<!-- 1. @Input - pe un singur nivel parinte-copil -->
+<!-- 2. Printr-un serviciu - 2 componente acceseaza aceasi variabila. Nu e nevoie sa aiba relatia parinte-copil -->
+<!-- 3. Prin router parameters -> componenta cu routerLink poate sa trimita un ticket id care sa fie prins de componenta pe care se navigheaza -->
