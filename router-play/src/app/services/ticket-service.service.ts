@@ -26,7 +26,7 @@ export class TicketService {
     id: '5',
     title: '5 ticket',
     description: 'descriptions'
-  },];
+  }];
 
   public getTickets(): Ticket[] {
     return this.tickets;
