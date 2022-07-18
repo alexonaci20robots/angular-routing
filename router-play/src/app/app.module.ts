@@ -3,18 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BoardComponent } from './board/board.component';
-import { TicketComponent } from './ticket/ticket.component';
-import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
+import { BoardComponent } from './pages/board/board.component';
+import { TicketPreviewComponent } from './pages/board/components/ticket-preview/ticket-preview.component';
+import { TicketDetailsComponent } from './pages/ticket-details/ticket-details.component';
 import { ProfileComponent } from './profile/profile.component';
+import { TimeTrackingComponent } from './pages/ticket-details/components/time-tracking/time-tracking.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BoardComponent,
-    TicketComponent,
+    TicketPreviewComponent,
     TicketDetailsComponent,
-    ProfileComponent
+    ProfileComponent,
+    TimeTrackingComponent
   ],
   imports: [
     BrowserModule,

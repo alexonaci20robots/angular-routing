@@ -1,6 +1,6 @@
 <ul>
   <li *ngFor="let ticket of myTickets">
-    <app-ticket [ticketTitle]="ticket.title" [routerLink]="['./', ticket.id]"></app-ticket>
+    <app-ticket-preview [ticketTitle]="ticket.title" [routerLink]="['./', ticket.id]"></app-ticket-preview>
   </li>
 </ul>
 

@@ -1,0 +1,11 @@
+<h1>Title of the ticket:</h1>
+{{ticket?.title}}
+
+<h1>Description of the ticket</h1>
+{{ticket?.description}}
+
+<hr>
+
+<p>Tracked hours: {{trackedHours}}h</p>
+
+<app-time-tracking [ticketTitle]="ticket?.title" (trackingEvent)="handleTracking($event)"></app-time-tracking>

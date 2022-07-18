@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Ticket } from '../models/ticket-model';
-import { TicketService } from '../services/ticket-service.service';
+import { Ticket, TrackingOperation } from '../../models/ticket-model';
+import { TicketService } from '../../services/ticket-service.service';
 
+// smart component / container component
 @Component({
   selector: 'app-ticket-details',
   templateUrl: './ticket-details.component.html',
@@ -10,7 +11,8 @@ import { TicketService } from '../services/ticket-service.service';
 })
 export class TicketDetailsComponent implements OnInit {
 
-  public ticket: Ticket | undefined;
+  ticket: Ticket | undefined;
+  trackedHours: number = 0;
 
   constructor(private activatedRoute: ActivatedRoute,
     private ticketService: TicketService) { }
@@ -21,6 +23,15 @@ export class TicketDetailsComponent implements OnInit {
       const ticketId = params['ticketId'];
       this.ticket = this.ticketService.getTicketById(ticketId);
     });
+  }
+
+  handleTracking(trackingEvent: string) {
+    if (trackingEvent === TrackingOperation.INCREMENT) {
+      this.trackedHours++;
+    }
+    if (trackingEvent === TrackingOperation.DECREMENT && this.trackedHours > 0) {
+      this.trackedHours--;
+    }
   }
 
 }

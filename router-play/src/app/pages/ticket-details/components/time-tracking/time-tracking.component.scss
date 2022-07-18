@@ -1,0 +1,20 @@
+
+.tracking-container {
+  height: 300px;
+  width: 400px;
+
+  .tracking-buttons {
+    display: flex;
+
+    .track {
+      flex: 1;
+      font-size: 30px;
+      cursor: pointer;
+
+      span {
+        border: 2px solid black;
+        border-radius: 100px;
+      }
+    }
+  }
+}
